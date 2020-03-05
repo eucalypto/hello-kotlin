@@ -1,17 +1,18 @@
-import java.util.*
+
 
 fun main(args: Array<String>) {
     println("Hello World, ${args.first()}")
-    dayOfWeek()
+    feedTheFish()
 }
 
-fun dayOfWeek(){
-    println("What day is it today?")
-    var day = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
-    when (day) {
-        0 -> println("Sunday")
-        1 -> println("Monday")
-        Calendar.THURSDAY -> println("Thursday")
-        else -> println("Some day")
-    }
+ fun feedTheFish() {
+     val day = randomDay()
+     val food = "pellets"
+     println("Today is $day and the fish eat $food")
+ }
+
+
+fun randomDay() : String {
+    val week = listOf("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
+    return week.random()
 }
